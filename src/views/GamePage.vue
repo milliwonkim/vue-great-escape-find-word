@@ -4,6 +4,7 @@
       <div class="question-container">
         {{ WORDS_LIST[questionSelector].question }}
       </div>
+      <div>카테고리: {{ WORDS_LIST[questionSelector].category }}</div>
       <div>
         {{ assembleString }}
       </div>
@@ -149,7 +150,11 @@ export default defineComponent({
     }
 
     function handleRouteQuestion(prevOrNext: string) {
-      if (prevOrNext === 'NEXT') {
+      if (
+        // eslint-disable-next-line operator-linebreak
+        prevOrNext === 'NEXT' &&
+        questionSelector.value < WORDS_LIST.length - 1
+      ) {
         questionSelector.value += 1;
         assembleString.value = '';
         assembleArray.value = [];
