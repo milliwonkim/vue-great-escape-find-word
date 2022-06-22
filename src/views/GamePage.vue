@@ -5,6 +5,7 @@
         {{ WORDS_LIST[questionSelector].question }}
       </div>
       <div>카테고리: {{ WORDS_LIST[questionSelector].category }}</div>
+      <div>난이도: {{ WORDS_LIST[questionSelector].level }}</div>
       <div>
         {{ assembleString }}
       </div>
